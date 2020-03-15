@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import * as base from "../components/base"
 
 export const routes = {
   LIFE: "/life",
@@ -8,10 +9,15 @@ export const routes = {
 
 export default () => (
   <Wrapper>
-    <Title>
-      최민석
-      <Subtitle>/ Minseok Choi</Subtitle>
-    </Title>
+    <Header>
+      <base.VerticalSpacer size={40} />
+      <Title>
+        최민석
+        <Subtitle>/ Minseok Choi</Subtitle>
+      </Title>
+      <base.VerticalSpacer size={10} />
+      <Description>Get motivated from every challenges. </Description>
+    </Header>
   </Wrapper>
 )
 
@@ -19,12 +25,16 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-contents: center;
-  padding-top: 20px;
   font-family: "Apple SD Gothic Neo", "Helvetica", "Arial";
 `
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+`
 
-const Title = styled.h1`
+const Title = styled.div`
   font-weight: 10;
   font-size: 50px;
   color: #555555;
@@ -39,4 +49,9 @@ const Subtitle = styled.div`
   margin-left: 12px;
   margin-bottom: 2px;
   align-self: flex-end;
+`
+
+const Description = styled.div`
+  font-size: 20px;
+  color: #333333;
 `
