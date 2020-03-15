@@ -6,10 +6,19 @@ import styled from "styled-components"
 export interface IRoundedOutlinBoxProps {
   label: string
   to: string
+  external: boolean
 }
 
-const RoundedOutlinBox: React.FC<IRoundedOutlinBoxProps> = ({ label, to }) => {
-  return (
+const RoundedOutlinBox: React.FC<IRoundedOutlinBoxProps> = ({
+  label,
+  to,
+  external,
+}) => {
+  return external ? (
+    <a href={to} style={{ textDecoration: "none" }}>
+      <Wrapper>{label}</Wrapper>
+    </a>
+  ) : (
     <Link to={to} style={{ textDecoration: "none" }}>
       <Wrapper>{label}</Wrapper>
     </Link>

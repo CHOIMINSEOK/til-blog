@@ -18,9 +18,22 @@ export default () => (
       </Title>
       <base.VerticalSpacer size={10} />
       <Description>Get motivated from every challenges. </Description>
-
       <base.VerticalSpacer size={10} />
-      <RoundedOutlinBox label="Résumé" to="/resume" />
+      <div style={{ display: "flex" }}>
+        <RoundedOutlinBox label="Résumé" to="/resume" external={false} />
+        <div style={{ width: "4px" }} />
+        <RoundedOutlinBox
+          label="Github"
+          to="https://github.com/CHOIMINSEOK"
+          external
+        />
+        <div style={{ width: "4px" }} />
+        <RoundedOutlinBox
+          label="Brunch"
+          to="https://brunch.co.kr/@dotori"
+          external
+        />
+      </div>
     </Header>
   </Wrapper>
 )
