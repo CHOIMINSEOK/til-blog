@@ -1,5 +1,6 @@
 import { CreatePagesArgs } from 'gatsby'
 import path from 'path'
+import { Query } from '../graphql-types'
 
 const pages = [
   { id: 1, content: 'Gatsby 로 블로그 만들기' },
@@ -10,7 +11,7 @@ const pages = [
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
   const { createPage } = actions
 
-  const { data, errors }: { data?: any; errors?: any } = await graphql(`
+  const { data, errors } = await graphql<Query>(`
     {
       allMarkdownRemark {
         edges {
@@ -29,7 +30,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     throw errors
   }
 
-  data.allMarkdownRemark.edges.forEach(({ node }: any) => {
+  data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.title,
       context: {

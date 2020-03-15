@@ -1,5 +1,3 @@
-require("ts-node").register()
-
-const { createPages } = require("./src/lib/createPages")
+import { createPages } from './src/lib/createPages'
 
 exports.createPages = createPages

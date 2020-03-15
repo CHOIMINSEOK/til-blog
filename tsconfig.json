@@ -10,7 +10,9 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noUnusedLocals": false,
-    "allowJs": true
+    "allowJs": true,
+    "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
+    "strictNullChecks": false /* Enable strict null checks. */
   },
   "exclude": ["node_modules", "public", ".cache"]
 }
