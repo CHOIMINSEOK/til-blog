@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import * as base from "../components/base"
+import RoundedOutlinBox from "../components/RoundedOutlineBox"
 
 export const routes = {
   LIFE: "/life",
@@ -17,6 +18,9 @@ export default () => (
       </Title>
       <base.VerticalSpacer size={10} />
       <Description>Get motivated from every challenges. </Description>
+
+      <base.VerticalSpacer size={10} />
+      <RoundedOutlinBox label="Résumé" to="/resume" />
     </Header>
   </Wrapper>
 )
@@ -54,4 +58,8 @@ const Subtitle = styled.div`
 const Description = styled.div`
   font-size: 20px;
   color: #333333;
+`
+
+const LI = styled.li`
+  margin-left: 0px;
 `
